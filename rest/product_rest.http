@@ -1,0 +1,33 @@
+@hostname=localhost
+@port=8080
+@host={{hostname}}:{{port}}
+
+GET http://{{host}}/api/v1/products
+
+###
+
+GET http://{{host}}/api/v1/products?store=ABC TECH
+
+###
+
+GET http://{{host}}/api/v1/products/2
+
+###
+
+POST http://{{host}}/api/v1/products
+Content-Type: application/json
+
+{
+    "name": "Kupa",
+    "price": 100.0,
+    "discount": 0.0,
+    "store": "Kırtasiye Merkezi"
+}
+
+###
+
+PUT http://{{host}}/api/v1/products/1?newPrice=200
+
+###
+
+DELETE http://{{host}}/api/v1/products/3
